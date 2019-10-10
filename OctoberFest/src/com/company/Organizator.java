@@ -7,13 +7,23 @@ public class Organizator {
     public Organizator() {
     }
 
-    public int zaPraceBarmanek(Barmanka barmanka){
-        zasobPieniedzy -= barmanka.wynagrodzenieBarmanki(barmanka.iloscDniPrzepracowanych);
+    public int getZasobPieniedzy() {
         return zasobPieniedzy;
     }
 
-    public int zarobkiNaPiwie(Konsument konsument){
+    public void setZasobPieniedzy(int zasobPieniedzy) {
+        this.zasobPieniedzy = zasobPieniedzy;
+    }
+
+    public void zaPraceBarmanki(Barmanka barmanka){
+        int temp = barmanka.zapotrzebowanieBarmanek * barmanka.iloscDniPrzepracowanych; //np10barmanek * 4 dni przepracowane
+        temp *= barmanka.DZIENNE_WYNAGRODZENIE;
+        zasobPieniedzy -= temp;
+        setZasobPieniedzy(zasobPieniedzy);
+    }
+
+    public void zarobkiNaPiwie(Konsument konsument){
         int sumaZarobkowNaPiwie = konsument.cenaZaPiwa;
-        return sumaZarobkowNaPiwie;
+        setZasobPieniedzy(sumaZarobkowNaPiwie);
     }
 }

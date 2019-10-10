@@ -10,6 +10,7 @@ public class Main {
         Random randomGenerator = new Random();
 
         Barmanka barmanka = new Barmanka(3,4);
+        Barmanka barmanka1 = new Barmanka(5,1);
 
         Organizator organizator = new Organizator();
 
@@ -28,18 +29,24 @@ public class Main {
 //        System.out.println(konsumentTest1.ustaleniePoziomuUrodyBarmanki(barmanka));
         System.out.println(konsumentTest1.obliczanieNapiwku(barmanka));
 
-//        System.out.println("/////////////////////////////////////////////////");
-//        System.out.println(barmanka.wynagrodzenieBarmanki(barmanka.iloscDniPrzepracowanych));
-//        numerIdentyfikatoraKonsumenta = 11;
-//        System.out.println("numerIdentyfikatoraKonsumenta = " + numerIdentyfikatoraKonsumenta);
-//        System.out.println("ilosc zatrudnionych barmanek: " + barmanka.obliczenieZatrudnieniaBarmanek(numerIdentyfikatoraKonsumenta));
+        System.out.println("/////////////////////////////////////////////////");
+        System.out.println(barmanka.wynagrodzenieBarmanki(barmanka.iloscDniPrzepracowanych));
+        numerIdentyfikatoraKonsumenta = 11;
+        System.out.println("numerIdentyfikatoraKonsumenta = " + numerIdentyfikatoraKonsumenta);
+        System.out.println("ilosc zatrudnionych barmanek: " + barmanka.obliczenieZatrudnieniaBarmanek(numerIdentyfikatoraKonsumenta));
 
         System.out.println("/////////////////////////////////////////////////");
         System.out.println("Suma zarobionych pieniedzy to m. napiwek() + ()wynagrodzenieBarmanki, czyli " + barmanka.sumaZarobionychPieniedzy(konsumentTest1, barmanka));
 //        System.out.println("konsumentTest1.iloscKupionychPiw = " + konsumentTest1.iloscKupionychPiw);
 
         System.out.println("/////////////////////////////////////////////////");
-        System.out.println(organizator.zarobkiNaPiwie(konsumentTest1));
+        organizator.zarobkiNaPiwie(konsumentTest1);
+        System.out.println(organizator.getZasobPieniedzy());
+
+        System.out.println("/////////////////////////////////////////////////");
+
+        organizator.zaPraceBarmanki(barmanka);
+        System.out.println(organizator.getZasobPieniedzy());
 
     }
 }

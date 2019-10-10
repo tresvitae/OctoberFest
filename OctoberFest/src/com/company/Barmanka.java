@@ -10,6 +10,7 @@ public class Barmanka extends Czlowiek {
     int poziomUrody; //1-100
     int nowyPoziomUrody;
     int napiwek;
+    int zapotrzebowanieBarmanek;
 
     public Barmanka(int iloscDniPrzepracowanych, int poziomUrody) {
         this.iloscDniPrzepracowanych = iloscDniPrzepracowanych;
@@ -35,10 +36,10 @@ public class Barmanka extends Czlowiek {
     }
 
     public int obliczenieZatrudnieniaBarmanek(int iloscKlientow){
-        int zapotrzebowanie = iloscKlientow / DZIESIEC_KLIENTOW;
+        zapotrzebowanieBarmanek = iloscKlientow / DZIESIEC_KLIENTOW;
         if(iloscKlientow % DZIESIEC_KLIENTOW != 0)
-            zapotrzebowanie++;
-        return zapotrzebowanie;
+            zapotrzebowanieBarmanek++;
+        return zapotrzebowanieBarmanek;
     }
 
     public int sumaZarobionychPieniedzy(Konsument konsument, Barmanka barmanka){
