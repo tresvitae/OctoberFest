@@ -6,10 +6,11 @@ public class Konsument extends Czlowiek {
     private int tolerancjaIlosciWypicia;
     private int numerIdentyfikatora;
 
-    final float WARTOSC_PIWA = 1.5f;
+    final int WARTOSC_PIWA = 2;
     int poziomUpicia;
     Barmanka barmanka;
     int iloscKupionychPiw;
+    int cenaZaPiwa;
 
     public Konsument(int stanKontaNaKarcie, int tolerancjaIlosciWypicia, int numerIdentyfikatora) {
         this.stanKontaNaKarcie = stanKontaNaKarcie;
@@ -43,14 +44,20 @@ public class Konsument extends Czlowiek {
 
 
     public int obliczanieNapiwku(Barmanka barmanka) {
-        int napiwek = ((iloscKupionychPiw * (int)WARTOSC_PIWA) * ustaleniePoziomuUrodyBarmanki(barmanka));
+        int napiwek = ((iloscKupionychPiw * WARTOSC_PIWA) * ustaleniePoziomuUrodyBarmanki(barmanka));
         System.out.println("napiwek = " + napiwek);
         return napiwek;
     }
 
     public void kupionePiwo() {
         iloscKupionychPiw++;
+        obliczenieIlosciZakupionychPiw();
         System.out.println("wypiles piwo nr " + iloscKupionychPiw);
+    }
+
+    public int obliczenieIlosciZakupionychPiw(){
+        cenaZaPiwa = iloscKupionychPiw * WARTOSC_PIWA;
+        return cenaZaPiwa;
     }
 
     // Kazdy KONSUMENT pije  w umor.

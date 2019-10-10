@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 import java.util.Random;
 
 public class Main {
@@ -9,6 +11,7 @@ public class Main {
 
         Barmanka barmanka = new Barmanka(3,4);
 
+        Organizator organizator = new Organizator();
 
         int numerIdentyfikatoraKonsumenta = 1;
         Konsument konsumentTest1= new Konsument(randomGenerator.nextInt(60), randomGenerator.nextInt(15), numerIdentyfikatoraKonsumenta++);
@@ -34,5 +37,9 @@ public class Main {
         System.out.println("/////////////////////////////////////////////////");
         System.out.println("Suma zarobionych pieniedzy to m. napiwek() + ()wynagrodzenieBarmanki, czyli " + barmanka.sumaZarobionychPieniedzy(konsumentTest1, barmanka));
 //        System.out.println("konsumentTest1.iloscKupionychPiw = " + konsumentTest1.iloscKupionychPiw);
+
+        System.out.println("/////////////////////////////////////////////////");
+        System.out.println(organizator.zarobkiNaPiwie(konsumentTest1));
+
     }
 }
