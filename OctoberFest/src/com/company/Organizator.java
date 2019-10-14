@@ -15,15 +15,25 @@ public class Organizator {
         this.zasobPieniedzy = zasobPieniedzy;
     }
 
-    public void zaPraceBarmanki(Barmanka barmanka){
+
+    //TODO: do sprawdzenia przy skonczeniu klas 1 barmanka, 1 konsument
+    public void wydatkiZaPraceBarmanek(Barmanka barmanka){
         int temp = barmanka.zapotrzebowanieBarmanek * barmanka.iloscDniPrzepracowanych; //np10barmanek * 4 dni przepracowane
         temp *= barmanka.DZIENNE_WYNAGRODZENIE;
         zasobPieniedzy -= temp;
         setZasobPieniedzy(zasobPieniedzy);
     }
 
+
+
     public void zarobkiNaPiwie(Konsument konsument){
         int sumaZarobkowNaPiwie = konsument.cenaZaPiwa;
         setZasobPieniedzy(sumaZarobkowNaPiwie);
+    }
+
+    public void wydatkiNaSupplies(){
+        /*
+        //koszty za parasole, transparot, etc
+         */
     }
 }

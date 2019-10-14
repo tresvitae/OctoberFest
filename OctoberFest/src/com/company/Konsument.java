@@ -51,14 +51,11 @@ public class Konsument extends Czlowiek {
 
     public void kupionePiwo() {
         iloscKupionychPiw++;
-        obliczenieIlosciZakupionychPiw();
+        cenaZaPiwa = iloscKupionychPiw * WARTOSC_PIWA; //obliczenie ilosci zakupionych piw
         System.out.println("wypiles piwo nr " + iloscKupionychPiw);
     }
 
-    public int obliczenieIlosciZakupionychPiw(){
-        cenaZaPiwa = iloscKupionychPiw * WARTOSC_PIWA;
-        return cenaZaPiwa;
-    }
+
 
     // Kazdy KONSUMENT pije  w umor.
     public int ustaleniePoziomuUpiciaKonsumenta() {
@@ -68,7 +65,7 @@ public class Konsument extends Czlowiek {
             kupionePiwo();
 
             if(poziomUpicia >= 100){
-                System.out.println("poziomUpicia to  = " + poziomUpicia + " NAJEBANY TO DO DOMU");
+                System.out.println("poziomUpicia to  = " + poziomUpicia + " DO DOMU");
                // break;
             }
             
